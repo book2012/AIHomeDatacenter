@@ -1,0 +1,15 @@
+﻿.env
+.env.*
+*.log
+*.sql
+*.gz
+.vscode/
+Thumbs.db
+Desktop.ini
+backup/tmp/
+backup/cache/
+docker/**/data/
+docker/**/config/
+docker/**/db/
+*.pem
+*.key
