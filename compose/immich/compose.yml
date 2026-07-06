@@ -9,6 +9,10 @@ services:
       - "2283:2283"
     volumes:
       - ${UPLOAD_LOCATION}:/usr/src/app/upload
+        # 기존 ownCloud 사진 (읽기 전용)
+#      - ${OWNCLOUD_PHOTOS}:/mnt/external/Photos:ro
+#      - ${OWNCLOUD_SHARE}:/mnt/external/Share:ro 
+
       - /etc/localtime:/etc/localtime:ro
     depends_on:
       - redis
