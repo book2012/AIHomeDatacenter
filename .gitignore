@@ -13,3 +13,8 @@ docker/**/config/
 docker/**/db/
 *.pem
 *.key
+
+# Local runtime / server data
+backup/
+docker-data/
+data/
