@@ -1,0 +1,9 @@
+data/storage.db
+data/storage.db-shm
+data/storage.db-wal
+
+reports/*
+!reports/.gitkeep
+
+__pycache__/
+*.pyc

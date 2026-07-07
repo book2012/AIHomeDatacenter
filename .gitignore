@@ -18,3 +18,9 @@ docker/**/db/
 backup/
 docker-data/
 data/
+
+# Agent project skeletons
+!agents/
+!agents/storage-agent/
+!agents/storage-agent/data/
+!agents/storage-agent/data/.gitkeep
