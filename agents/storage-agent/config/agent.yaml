@@ -1,0 +1,42 @@
+agent:
+  name: storage-agent
+  runtime: ubuntu-worker
+  mode: read-only
+
+database:
+  path: data/storage.db
+
+scan:
+  roots:
+    - name: exHDD1
+      path: /mnt/storage/exHDD1
+      enabled: true
+
+    - name: exHDD2
+      path: /mnt/storage/exHDD2
+      enabled: true
+
+    - name: Archive
+      path: /mnt/storage/Archive
+      enabled: true
+
+  exclude:
+    directories:
+      - .Trash-1000
+      - $RECYCLE.BIN
+      - System Volume Information
+      - __pycache__
+      - node_modules
+
+    extensions:
+      - .tmp
+      - .part
+      - .crdownload
+
+safety:
+  allow_delete: false
+  allow_move: false
+  require_human_approval: true
+
+reports:
+  output_dir: reports
