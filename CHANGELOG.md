@@ -20,3 +20,6 @@ Windows Docker Development Environment Ready
 - Photo storage mapped to /mnt/storage/Photos.
 - PostgreSQL and Redis/Valkey separated for Immich.
 - Immich service verified healthy.
+
+Nextcloud data path migrated to:
+/mnt/storage/Archive/Nextcloud

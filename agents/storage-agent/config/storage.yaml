@@ -1,0 +1,15 @@
+disks:
+  archive4tb:
+    path: /mnt/storage
+    role: master_archive
+
+  exHDD2:
+    path: /mnt/exHDD2
+    role: photo_merge
+
+archive:
+  immich: /mnt/storage/Archive/Immich
+  nextcloud: /mnt/storage/Archive/Nextcloud
+
+database:
+  path: /opt/aihomedatacenter/agents/storage-agent/data/storage.db

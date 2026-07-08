@@ -19,7 +19,9 @@ services:
       NEXTCLOUD_ADMIN_PASSWORD: ${NEXTCLOUD_ADMIN_PASSWORD}
     volumes:
       - ${NEXTCLOUD_APP_DIR}:/var/www/html
-      - /mnt/storage/CloudData:/var/www/html/data
+      - /mnt/storage/Archive/Nextcloud/data:/var/www/html/data
+      - /mnt/storage/Archive/Nextcloud/files:/mnt/archive-nextcloud
+      - /mnt/storage/Archive/Immich:/mnt/archive-immich
     depends_on:
       - nextcloud-db
       - nextcloud-redis

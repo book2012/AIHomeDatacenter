@@ -9,11 +9,11 @@ database:
 scan:
   roots:
     - name: exHDD1
-      path: /mnt/storage/exHDD1
+      path: /mnt/exHDD1
       enabled: true
 
     - name: exHDD2
-      path: /mnt/storage/exHDD2
+      path: /mnt/exHDD2
       enabled: true
 
     - name: Archive
