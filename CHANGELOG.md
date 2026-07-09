@@ -1,25 +1,26 @@
-2026-07-06
+# CHANGELOG
 
-Project Created
+## Sprint 1
 
-Ubuntu22 Upgrade Complete
+### Added
 
-Legacy Snapshot Complete
+- Python Virtual Environment
+- Pytest
+- Worker SDK
+- Runner Interface
+- LocalRunner
+- SSHRunner
+- UbuntuWorkerClient
+- WorkerFactory
+- Worker Health Parser
+- Worker Command API
+- Task Registry
+- Task Execution Manager
+- Session Manager
 
-Windows Docker Development Environment Ready
-## 2026-07-06 - Sprint 6-2
-- Immich production deployment added.
-- Immich version pinned to v2.6.0.
-- Photo storage mapped to /mnt/storage/Photos.
-- PostgreSQL and Redis/Valkey separated for Immich.
-- Immich service verified healthy.
+### Status
 
-## 2026-07-06 - Sprint 6-2
-- Immich production deployment added.
-- Immich version pinned to v2.6.0.
-- Photo storage mapped to /mnt/storage/Photos.
-- PostgreSQL and Redis/Valkey separated for Immich.
-- Immich service verified healthy.
+- 12 Pytest Passed
+- Ubuntu Worker Protocol Verified
+- AIControlCenter Core SDK Operational
 
-Nextcloud data path migrated to:
-/mnt/storage/Archive/Nextcloud

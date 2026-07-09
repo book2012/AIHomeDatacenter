@@ -1,19 +1,101 @@
-﻿# AI Home Datacenter
+# AIControlCenter
 
-Windows Docker 테스트 환경에서 시작한 홈 데이터센터 프로젝트.
+AIControlCenter is the Brain of the AI Home Infrastructure.
 
-## Roles
+It is not a dashboard.
 
-- Windows PC: Docker 개발/테스트
-- Ubuntu Server: 운영 서버
-- Mac mini M4: AI/자동화 서버
+It is the Control Plane responsible for orchestrating all Workers in the infrastructure.
 
-## Planned Services
+---
 
-- Homepage
-- Portainer
-- Immich
-- Nextcloud
-- Uptime Kuma
-- Plex
-- Backup Automation
+## Architecture
+
+AIControlCenter
+
+↓
+
+Worker SDK
+
+↓
+
+Runner
+
+↓
+
+Worker Protocol
+
+↓
+
+Workers
+
+Current Worker
+
+- Ubuntu Storage Server
+
+Future Workers
+
+- GPU Worker
+- Windows Worker
+- NAS
+- Raspberry Pi
+- Cloud Worker
+
+---
+
+## Current Sprint
+
+### Completed
+
+- Python Development Environment
+- Pytest Framework
+- Worker SDK
+- Runner Abstraction
+- LocalRunner
+- SSHRunner
+- UbuntuWorkerClient
+- WorkerFactory
+- workers.yaml
+- Worker Health Parser
+- Worker Command API
+- Task Registry
+- Task Execution Manager
+- Session Manager
+
+---
+
+## Current Architecture
+
+AIControlCenter
+
+↓
+
+WorkerFactory
+
+↓
+
+WorkerClient
+
+↓
+
+Runner
+
+↓
+
+Worker Protocol
+
+↓
+
+Ubuntu Worker
+
+---
+
+## Design Principles
+
+- Control Center First
+- Worker Agnostic
+- Infrastructure as Code
+- Git First
+- Documentation
+- Automation
+- Long-term Maintainability
+
