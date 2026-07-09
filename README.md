@@ -1,55 +1,19 @@
-# AIControlCenter
+﻿# AI Home Datacenter
 
-AIControlCenter is the Brain and Control Plane for AI Home Infrastructure.
+Windows Docker 테스트 환경에서 시작한 홈 데이터센터 프로젝트.
 
-It orchestrates Workers, Agents, Tasks, Sessions, Scheduling, Monitoring, Power Policy, and Dashboard APIs.
+## Roles
 
-Ubuntu Storage Server is the first Worker, not the final goal.
+- Windows PC: Docker 개발/테스트
+- Ubuntu Server: 운영 서버
+- Mac mini M4: AI/자동화 서버
 
-## Architecture
+## Planned Services
 
-AIControlCenter
-→ Worker SDK
-→ WorkerFactory
-→ WorkerClient
-→ Runner
-→ Worker Protocol
-→ Workers
-
-## Current Worker
-
-- Ubuntu Storage Server
-
-## Future Workers
-
-- GPU Worker
-- Windows Worker
-- NAS
-- Raspberry Pi
-- Cloud Worker
-
-## Completed Core Modules
-
-- Worker SDK
-- Runner Interface
-- LocalRunner
-- SSHRunner
-- UbuntuWorkerClient
-- WorkerFactory
-- Worker Command API
-- Task Registry
-- Task Execution Manager
-- Multi-worker Session Manager
-- Scheduler Core
-- Power Manager
-- Agent Framework
-- Monitoring Snapshot
-- Dashboard API Core
-
-## Test Status
-
-23 tests passed.
-
-## Principle
-
-Control Center thinks. Workers execute.
+- Homepage
+- Portainer
+- Immich
+- Nextcloud
+- Uptime Kuma
+- Plex
+- Backup Automation

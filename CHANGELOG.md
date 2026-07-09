@@ -1,34 +1,25 @@
-# CHANGELOG
+2026-07-06
 
-## 2026-07-09
+Project Created
 
-### Added
+Ubuntu22 Upgrade Complete
 
-- AIControlCenter core package structure
-- Worker SDK
-- Runner abstraction
-- LocalRunner
-- SSHRunner
-- UbuntuWorkerClient
-- WorkerFactory
-- Worker health parser
-- Worker command execution API
-- Task Registry
-- Managed Task Execution
-- Multi-worker Session Manager
-- Scheduler Core
-- Power Manager
-- Agent Framework
-- Monitoring Snapshot
-- Dashboard API Core
-- Project .gitignore
+Legacy Snapshot Complete
 
-### Verified
+Windows Docker Development Environment Ready
+## 2026-07-06 - Sprint 6-2
+- Immich production deployment added.
+- Immich version pinned to v2.6.0.
+- Photo storage mapped to /mnt/storage/Photos.
+- PostgreSQL and Redis/Valkey separated for Immich.
+- Immich service verified healthy.
 
-- Ubuntu Worker Protocol
-- worker-ready JSON parsing
-- worker-heartbeat JSON parsing
-- worker-recovery JSON parsing
-- worker-command text wrapping
-- Dashboard status snapshot
-- 23 pytest tests passed
+## 2026-07-06 - Sprint 6-2
+- Immich production deployment added.
+- Immich version pinned to v2.6.0.
+- Photo storage mapped to /mnt/storage/Photos.
+- PostgreSQL and Redis/Valkey separated for Immich.
+- Immich service verified healthy.
+
+Nextcloud data path migrated to:
+/mnt/storage/Archive/Nextcloud
