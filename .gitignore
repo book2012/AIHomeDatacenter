@@ -1,55 +1,11 @@
-﻿.env
-.env.*
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+reports/controlcenter-audit-*.txt
 *.log
-*.sql
-*.gz
-.vscode/
-Thumbs.db
-Desktop.ini
-backup/tmp/
-backup/cache/
-docker/**/data/
-docker/**/config/
-docker/**/db/
-*.pem
-*.key
-
-# Local runtime / server data
-backup/
-docker-data/
-data/
-
-# Agent project skeletons
-!agents/
-!agents/storage-agent/
-!agents/storage-agent/data/
-!agents/storage-agent/data/.gitkeep
-
-# Python
-**/.venv/
-**/__pycache__/
-**/*.pyc
-
-# SQLite / DB runtime
-*.sqlite
-*.sqlite3
-*.db
-*.db-shm
-*.db-wal
-
-# Runtime data
-docker-data/
-data/
-backup/
-tmp/
-.cache/
-
-# Archives / backups
-*.tar
-*.tar.gz
-*.zip
-*.bak
-*.bad.*
-
-# OS
-.DS_Store
+.env
+.env.*
+data/*.db
+data/*.db-shm
+data/*.db-wal
