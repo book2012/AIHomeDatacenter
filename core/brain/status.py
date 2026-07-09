@@ -1,10 +1,13 @@
 from datetime import datetime
 from typing import Any, Dict
 
+from core.integrations.status import IntegrationStatus
+
 
 class BrainStatus:
     def __init__(self, name: str = "AIControlCenter"):
         self.name = name
+        self.integrations = IntegrationStatus()
 
     def status(self) -> Dict[str, Any]:
         return {
@@ -22,5 +25,9 @@ class BrainStatus:
                 "dashboard_api",
                 "backup_registry",
                 "storage_registry",
+                "ai_api",
+                "notion",
+                "github",
             ],
+            "integrations": self.integrations.check(),
         }
