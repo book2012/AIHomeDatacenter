@@ -1,6 +1,10 @@
 from typing import Any, Dict
 
-from core.worker.health import decide_worker_status, run_json_script
+from core.worker.health import (
+    decide_worker_status,
+    run_json_script,
+    run_worker_command,
+)
 from core.worker.local_runner import LocalRunner
 from core.worker.runner import Runner
 from core.worker.worker_client import WorkerClient
@@ -36,3 +40,10 @@ class UbuntuWorkerClient(WorkerClient):
             "heartbeat": heartbeat,
             "recovery": recovery,
         }
+
+    def execute(self, command: str) -> Dict[str, Any]:
+        return run_worker_command(
+            self.runner,
+            self._script("worker-command.sh"),
+            command,
+        )

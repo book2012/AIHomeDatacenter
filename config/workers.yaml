@@ -1,0 +1,21 @@
+workers:
+
+  ubuntu-main:
+    type: ubuntu
+    mode: local
+
+    host: localhost
+    user: han
+    port: 22
+
+    scripts: scripts
+
+  ubuntu-remote:
+    type: ubuntu
+    mode: ssh
+
+    host: 192.168.1.7
+    user: han
+    port: 22
+
+    scripts: /opt/controlcenter/scripts

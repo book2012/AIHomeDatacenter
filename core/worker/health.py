@@ -13,6 +13,30 @@ def run_json_script(runner: Runner, script_path: str) -> Dict[str, Any]:
         raise ValueError(f"Invalid JSON from {script_path}: {exc}") from exc
 
 
+def run_worker_command(
+    runner: Runner,
+    script_path: str,
+    command: str,
+) -> Dict[str, Any]:
+    output = runner.run(["bash", script_path, command])
+
+    try:
+        parsed = json.loads(output)
+        return {
+            "command": command,
+            "ok": True,
+            "format": "json",
+            "result": parsed,
+        }
+    except json.JSONDecodeError:
+        return {
+            "command": command,
+            "ok": True,
+            "format": "text",
+            "output": output,
+        }
+
+
 def decide_worker_status(
     ready: Dict[str, Any],
     heartbeat: Dict[str, Any],
