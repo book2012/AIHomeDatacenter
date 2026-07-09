@@ -6,7 +6,11 @@ def test_dashboard_status():
 
     data = api.status(["ubuntu-main"])
 
-    assert "ubuntu-main" in data
-    assert "worker" in data["ubuntu-main"]
-    assert "session" in data["ubuntu-main"]
-    assert "power" in data["ubuntu-main"]
+    assert "brain" in data
+    assert "storage" in data
+    assert "backup" in data
+    assert "workers" in data
+    assert "ubuntu-main" in data["workers"]
+    assert "worker" in data["workers"]["ubuntu-main"]
+    assert "session" in data["workers"]["ubuntu-main"]
+    assert "power" in data["workers"]["ubuntu-main"]
