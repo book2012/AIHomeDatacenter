@@ -22,16 +22,27 @@ class MonitoringSnapshot:
         data = {}
 
         for worker_name in workers:
-            worker = self.worker_factory.create(worker_name)
+            try:
+                worker = self.worker_factory.create(worker_name)
+                worker_status = worker.status()
+                error = None
+            except Exception as exc:
+                worker_status = {
+                    "worker": worker_name,
+                    "status": "OPTIONAL_UNAVAILABLE",
+                    "optional": True,
+                }
+                error = str(exc)
 
             data[worker_name] = {
-                "worker": worker.status(),
+                "worker": worker_status,
                 "session": {
                     "state": self.session.state(worker_name).value,
                     "can_shutdown": self.session.can_shutdown(worker_name),
                     "running_tasks": len(self.registry.running(worker_name)),
                 },
                 "power": self.power.shutdown_status(worker_name),
+                "error": error,
             }
 
         return data
