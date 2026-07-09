@@ -1,27 +1,27 @@
 from typing import Any, Dict
 
-from core.worker.health import (
-    decide_worker_status,
-    run_json_script,
-)
+from core.worker.health import decide_worker_status, run_json_script
+from core.worker.local_runner import LocalRunner
+from core.worker.runner import Runner
 from core.worker.worker_client import WorkerClient
 
 
 class UbuntuWorkerClient(WorkerClient):
-    def __init__(self, scripts_path: str = "scripts"):
+    def __init__(self, scripts_path: str = "scripts", runner: Runner | None = None):
         self.scripts_path = scripts_path
+        self.runner = runner or LocalRunner()
 
     def _script(self, name: str) -> str:
         return f"{self.scripts_path}/{name}"
 
     def ready(self) -> Dict[str, Any]:
-        return run_json_script(self._script("worker-ready.sh"))
+        return run_json_script(self.runner, self._script("worker-ready.sh"))
 
     def heartbeat(self) -> Dict[str, Any]:
-        return run_json_script(self._script("worker-heartbeat.sh"))
+        return run_json_script(self.runner, self._script("worker-heartbeat.sh"))
 
     def recovery(self) -> Dict[str, Any]:
-        return run_json_script(self._script("worker-recovery.sh"))
+        return run_json_script(self.runner, self._script("worker-recovery.sh"))
 
     def status(self) -> Dict[str, Any]:
         ready = self.ready()
