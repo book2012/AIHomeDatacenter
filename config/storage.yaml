@@ -1,0 +1,16 @@
+storage:
+  root: /mnt/storage
+
+  categories:
+    ai: AI
+    archive: Archive
+    backup: Backup
+    cloud: Cloud
+    cloud_backup: CloudData.backup
+    immich: Immich
+    import: Import
+    inventory: Inventory
+    legacy: Legacy
+    photos: Photos
+    plex: Plex
+    recovery: Recovery
