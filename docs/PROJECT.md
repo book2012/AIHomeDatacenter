@@ -1,37 +1,65 @@
-# AIControlCenter
+# AIControlCenter Project
 
-## Vision
+## Mission
 
 AIControlCenter is the Brain of the AI Home Infrastructure.
 
-Ubuntu is only one Worker managed by AIControlCenter.
+It is not a dashboard.
+It is the Control Plane.
 
-The architecture is Worker agnostic.
+## Responsibilities
 
----
+- Worker Orchestration
+- AI Agent Management
+- Infrastructure Automation
+- Backup Management
+- Storage Management
+- Git Management
+- Notion Integration
+- Shopping Automation
+- Homepage Management
+- WordPress Management
+- Monitoring
+- Recovery
+- Scheduling
 
-## Current Sprint
+## Current Architecture
 
-Sprint 1
+AIControlCenter
+→ Worker SDK
+→ WorkerFactory
+→ WorkerClient
+→ Runner
+→ Worker Protocol
+→ Workers
 
-Completed
+## Current Worker
+
+Ubuntu Storage Server
+
+## Future Workers
+
+- GPU Worker
+- Windows Worker
+- NAS
+- Raspberry Pi
+- Cloud Worker
+
+## Current Sprint Completed
 
 - Worker SDK
-- Runner
-- Worker Factory
-- Health Parser
-- Command API
 - Task Registry
-- Task Execution Manager
 - Session Manager
-
----
+- Scheduler
+- Power Policy
+- Agent Framework
+- Monitoring Snapshot
+- Dashboard API
 
 ## Next Sprint
 
-- Multi Worker Session
-- Scheduler
-- Power Manager
-- Agent Framework
-- Dashboard
-
+- Persistent Task Store
+- FastAPI Server
+- Dashboard UI
+- Notion Sync
+- Git Automation

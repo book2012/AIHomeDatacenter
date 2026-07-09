@@ -1,38 +1,26 @@
 # AIControlCenter
 
-AIControlCenter is the Brain of the AI Home Infrastructure.
+AIControlCenter is the Brain and Control Plane for AI Home Infrastructure.
 
-It is not a dashboard.
+It orchestrates Workers, Agents, Tasks, Sessions, Scheduling, Monitoring, Power Policy, and Dashboard APIs.
 
-It is the Control Plane responsible for orchestrating all Workers in the infrastructure.
-
----
+Ubuntu Storage Server is the first Worker, not the final goal.
 
 ## Architecture
 
 AIControlCenter
+→ Worker SDK
+→ WorkerFactory
+→ WorkerClient
+→ Runner
+→ Worker Protocol
+→ Workers
 
-↓
-
-Worker SDK
-
-↓
-
-Runner
-
-↓
-
-Worker Protocol
-
-↓
-
-Workers
-
-Current Worker
+## Current Worker
 
 - Ubuntu Storage Server
 
-Future Workers
+## Future Workers
 
 - GPU Worker
 - Windows Worker
@@ -40,62 +28,28 @@ Future Workers
 - Raspberry Pi
 - Cloud Worker
 
----
+## Completed Core Modules
 
-## Current Sprint
-
-### Completed
-
-- Python Development Environment
-- Pytest Framework
 - Worker SDK
-- Runner Abstraction
+- Runner Interface
 - LocalRunner
 - SSHRunner
 - UbuntuWorkerClient
 - WorkerFactory
-- workers.yaml
-- Worker Health Parser
 - Worker Command API
 - Task Registry
 - Task Execution Manager
-- Session Manager
+- Multi-worker Session Manager
+- Scheduler Core
+- Power Manager
+- Agent Framework
+- Monitoring Snapshot
+- Dashboard API Core
 
----
+## Test Status
 
-## Current Architecture
+23 tests passed.
 
-AIControlCenter
+## Principle
 
-↓
-
-WorkerFactory
-
-↓
-
-WorkerClient
-
-↓
-
-Runner
-
-↓
-
-Worker Protocol
-
-↓
-
-Ubuntu Worker
-
----
-
-## Design Principles
-
-- Control Center First
-- Worker Agnostic
-- Infrastructure as Code
-- Git First
-- Documentation
-- Automation
-- Long-term Maintainability
-
+Control Center thinks. Workers execute.
