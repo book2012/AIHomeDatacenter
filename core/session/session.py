@@ -12,19 +12,26 @@ class WorkerSessionState(str, Enum):
 
 
 class SessionManager:
-
     def __init__(self, registry: TaskRegistry):
         self.registry = registry
 
-    def state(self):
-
-        running = self.registry.running()
+    def state(self, worker: str | None = None):
+        running = self.registry.running(worker)
 
         if running:
             return WorkerSessionState.BUSY
 
         return WorkerSessionState.IDLE
 
-    def can_shutdown(self):
+    def can_shutdown(self, worker: str | None = None):
+        return len(self.registry.running(worker)) == 0
 
-        return len(self.registry.running()) == 0
+    def summary(self, workers: list[str]):
+        return {
+            worker: {
+                "state": self.state(worker).value,
+                "can_shutdown": self.can_shutdown(worker),
+                "running_tasks": len(self.registry.running(worker)),
+            }
+            for worker in workers
+        }

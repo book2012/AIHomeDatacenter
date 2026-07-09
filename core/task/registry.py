@@ -28,7 +28,6 @@ class TaskRegistry:
             status="RUNNING",
             started=datetime.utcnow(),
         )
-
         self.tasks[task.id] = task
         return task
 
@@ -49,9 +48,13 @@ class TaskRegistry:
     def get(self, task_id):
         return self.tasks[task_id]
 
-    def running(self):
-        return [
-            t
-            for t in self.tasks.values()
+    def running(self, worker: str | None = None):
+        tasks = [
+            t for t in self.tasks.values()
             if t.status == "RUNNING"
         ]
+
+        if worker:
+            tasks = [t for t in tasks if t.worker == worker]
+
+        return tasks
