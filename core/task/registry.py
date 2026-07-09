@@ -1,34 +1,26 @@
 from dataclasses import dataclass
 from datetime import datetime
+from typing import Any
 from uuid import uuid4
 
 
 @dataclass
 class Task:
-
     id: str
-
     worker: str
-
     command: str
-
     status: str
-
     started: datetime
+    finished: datetime | None = None
+    result: Any | None = None
+    error: str | None = None
 
 
 class TaskRegistry:
-
     def __init__(self):
-
         self.tasks = {}
 
-    def start(
-        self,
-        worker,
-        command,
-    ):
-
+    def start(self, worker, command):
         task = Task(
             id=str(uuid4()),
             worker=worker,
@@ -38,18 +30,26 @@ class TaskRegistry:
         )
 
         self.tasks[task.id] = task
-
         return task
 
-    def finish(
-        self,
-        task_id,
-    ):
+    def finish(self, task_id, result=None):
+        task = self.tasks[task_id]
+        task.status = "FINISHED"
+        task.finished = datetime.utcnow()
+        task.result = result
+        return task
 
-        self.tasks[task_id].status = "FINISHED"
+    def fail(self, task_id, error):
+        task = self.tasks[task_id]
+        task.status = "FAILED"
+        task.finished = datetime.utcnow()
+        task.error = str(error)
+        return task
+
+    def get(self, task_id):
+        return self.tasks[task_id]
 
     def running(self):
-
         return [
             t
             for t in self.tasks.values()
