@@ -23,3 +23,21 @@ Windows Docker Development Environment Ready
 
 Nextcloud data path migrated to:
 /mnt/storage/Archive/Nextcloud
+
+## 2026-07-10 — Ubuntu Runtime v0.2
+
+### Added
+
+- Backup status reporting
+- Inventory index reporting
+- JSON runtime summary
+- Runtime health score
+- Health status command
+- Central runtime configuration
+
+### Safety
+
+- Read-only Runtime commands
+- No automatic file deletion
+- No service restart
+- No large media scan

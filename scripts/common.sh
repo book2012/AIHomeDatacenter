@@ -4,6 +4,13 @@ set -Eeuo pipefail
 IFS=$'\n\t'
 
 PROJECT_ROOT="${PROJECT_ROOT:-/opt/aihomedatacenter}"
+RUNTIME_CONFIG="${PROJECT_ROOT}/config/runtime.env"
+
+if [[ -r "${RUNTIME_CONFIG}" ]]; then
+    set -a
+    source "${RUNTIME_CONFIG}"
+    set +a
+fi
 REPORT_ROOT="${PROJECT_ROOT}/reports"
 LOG_ROOT="${PROJECT_ROOT}/logs"
 

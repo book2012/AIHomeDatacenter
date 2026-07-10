@@ -20,6 +20,8 @@ COMMANDS=(
     "disk-status"
     "git-status"
     "service-status"
+    "inventory-index"
+    "backup-status"
 )
 
 run_report() {
