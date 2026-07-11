@@ -58,3 +58,8 @@ reports/**/latest.*
 logs/*.log
 # Temporary script backups
 scripts/*.bak.*
+
+# Storage Agent runtime database
+agents/storage-agent/data/*.db
+agents/storage-agent/data/*.db-shm
+agents/storage-agent/data/*.db-wal

@@ -41,3 +41,24 @@ Nextcloud data path migrated to:
 - No automatic file deletion
 - No service restart
 - No large media scan
+
+## 2026-07 — Inventory Stabilization
+
+### Added
+
+- Legacy Inventory read-only analysis
+- Hash status migration preview
+- Duplicate preview reporting
+- Root-to-root duplicate analysis
+- Archive-master cleanup preview
+- Duplicate candidate reliability validation
+- Project audit command
+- Sprint gap reporting
+
+### Policy
+
+- Archive remains the Master Repository
+- Existing SHA256 results are preserved
+- Immich and Nextcloud are excluded from current analysis
+- No automatic deletion is allowed
+- User approval is required before cleanup
