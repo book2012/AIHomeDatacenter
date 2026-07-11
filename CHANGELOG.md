@@ -62,3 +62,28 @@ Nextcloud data path migrated to:
 - Immich and Nextcloud are excluded from current analysis
 - No automatic deletion is allowed
 - User approval is required before cleanup
+
+## 2026-07 — Hash Safety Foundation
+
+### Added
+
+- Existing SHA256 inventory audit
+- Pending hash queue preview
+- Queue path and size validation
+- Limited SHA256 dry run
+- Database apply preview
+- Transaction apply safety gate
+- Rollback verification on copied database
+- SQLite backup and restore verification
+- Limited batch dry run
+- Batch apply preview
+
+### Safety
+
+- Existing SHA256 values are never overwritten
+- Immich and Nextcloud remain excluded
+- Runtime database backups are excluded from Git
+- Hash batches have file and byte limits
+- Database writes use transactions
+- Failures require rollback
+- Automatic file deletion remains disabled

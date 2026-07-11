@@ -63,3 +63,5 @@ scripts/*.bak.*
 agents/storage-agent/data/*.db
 agents/storage-agent/data/*.db-shm
 agents/storage-agent/data/*.db-wal
+agents/storage-agent/data/test/
+agents/storage-agent/data/backups/

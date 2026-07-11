@@ -16,3 +16,11 @@
 - Automatic duplicate deletion
 - ownCloud migration
 - Mac mini integration
+
+## Sprint 5 Follow-up
+
+- Validate batch resume behavior
+- Add persistent batch ID to hash_runs
+- Generate duplicate tables from verified SHA256
+- Add automated Hash Worker tests
+- Keep automatic deletion disabled
