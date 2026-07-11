@@ -65,3 +65,40 @@ agents/storage-agent/data/*.db-shm
 agents/storage-agent/data/*.db-wal
 agents/storage-agent/data/test/
 agents/storage-agent/data/backups/
+
+# SQLite runtime files
+*.db-wal
+*.db-shm
+
+# Generated reports
+reports/**/*.json
+reports/**/*.txt
+reports/**/*.csv
+reports/**/*.md
+!reports/**/.gitkeep
+
+# SQLite runtime state
+*.db-wal
+*.db-shm
+
+# Storage Agent runtime databases
+agents/storage-agent/data/*.db
+agents/storage-agent/data/*.db-*
+agents/storage-agent/data/backups/
+agents/storage-agent/data/test/
+
+# Generated reports
+reports/**/*.json
+reports/**/*.txt
+reports/**/*.csv
+reports/**/*.md
+!reports/**/.gitkeep
+
+# Python runtime files
+__pycache__/
+*.py[cod]
+
+# Local backups and temporary files
+*.tmp
+*.bak
+*.bak.*

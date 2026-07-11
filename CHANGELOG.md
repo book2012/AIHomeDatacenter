@@ -110,3 +110,32 @@ Nextcloud data path migrated to:
 - Existing SHA256 results are preserved.
 - Immich and Nextcloud remain deferred.
 - Automatic deletion remains prohibited.
+
+## 2026-07 — Project Audit and Stabilization
+
+### Added
+
+- Storage Freshness Audit
+- Safe Storage Reconcile commands
+- Incremental Duplicate Schema v3
+- Incremental Duplicate Queue Preview
+- Runtime command discovery audit
+
+### Fixed
+
+- Corrected Runtime registration audit for automatic command discovery
+- Fixed nested SQLite transaction in fast Storage Reconcile
+- Corrected Archive mount detection to use the parent filesystem
+- Added failed-command report existence guards
+
+### Git Safety
+
+- SQLite WAL and SHM files are removed from Git tracking
+- Generated reports are excluded from Git
+- Runtime databases, backups and test databases are excluded from Git
+
+### Policy
+
+- Automatic deletion remains disabled
+- Immich and Nextcloud remain deferred
+- Storage freshness must be verified before Hash or Duplicate processing

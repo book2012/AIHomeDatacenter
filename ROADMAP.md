@@ -16,53 +16,56 @@ Completed.
 
 Completed.
 
-- Legacy Inventory protection
-- Migration Preview
-- Duplicate Preview
-- Root analysis
-- Reliability validation
-- Project Audit
-
 ## Sprint 5 — Hash Safety Foundation
 
 Completed.
 
-- Hash Audit
-- Pending Queue Preview
-- Queue Validation
-- SHA256 Dry Run
-- DB Apply Preview
-- Transaction safety
-- Rollback Test
-- Backup and Restore Test
-- Limited Batch Dry Run
+## Sprint 5.5 — Incremental Duplicate Foundation
 
-## Sprint 5.5 — Incremental Duplicate Engine
+In progress.
 
-Next.
+Completed:
 
-- Schema migration
-- Duplicate processing state
-- Newly completed Hash selection
-- Incremental group update
+- Schema v3
+- Incremental state tables
+- Apply Preview
+- Copied-database Migration Test
+- Initial Queue Preview
+
+Remaining:
+
+- Storage freshness normalization
+- exHDD2 Reconcile validation
+- Archive Other-area audit
+- Incremental processing preview
 - Retry and resume
 - Automated tests
 
-## Sprint 6 — Data Migration
+## Sprint 6 — Project Audit and Stabilization
+
+In progress.
+
+- Runtime and source audit
+- Git boundary cleanup
+- Missing-task audit
+- Documentation synchronization
+- Source and test commit
+
+## Sprint 7 — Data Migration
 
 - exHDD to Archive
 - ownCloud to Archive
 - Verification and rollback
-- Immich and Nextcloud migration later
+- Immich and Nextcloud later
 
-## Sprint 7 — Mac mini Brain Integration
+## Sprint 8 — Mac mini Brain Integration
 
 - SSH/API control
 - JSON report collection
 - AI analysis
 - User approval workflow
 
-## Sprint 8 — Dashboard and Notifications
+## Sprint 9 — Dashboard and Notifications
 
 - Homepage
 - Telegram

@@ -2,12 +2,9 @@
 
 ## Current Phase
 
-Sprint 5 completed.
-Sprint 5.5 Incremental Duplicate Engine is next.
+Sprint 6 — Project Audit and Stabilization
 
-## Platform Roles
-
-### Mac mini M4 — Brain
+## Mac mini M4 — Brain
 
 - AI Agent
 - OpenAI
@@ -19,11 +16,11 @@ Sprint 5.5 Incremental Duplicate Engine is next.
 - Notion
 - GitHub
 - Ubuntu Worker control
-- Dashboard and notifications
+- Approval and notification workflow
 
-Mac mini performs decisions and orchestration only.
+Mac mini는 판단과 오케스트레이션을 담당한다.
 
-### Ubuntu Server — Worker
+## Ubuntu Server — Worker
 
 - Docker
 - Storage
@@ -31,40 +28,30 @@ Mac mini performs decisions and orchestration only.
 - Immich
 - Nextcloud
 - Plex
-- Runtime Commands
+- Ubuntu Runtime
 - Storage Agent
 - Inventory
-- SHA256 processing
-- SMART and backup verification
+- SHA256 처리
+- Freshness Audit
+- Reconcile
 
-Ubuntu does not perform AI reasoning.
+Ubuntu에서는 AI 추론 워크로드를 실행하지 않는다.
 
-## Completed Foundations
+## Current Storage State
 
-- Ubuntu Runtime
-- Runtime health reporting
-- Storage Agent
-- SQLite Inventory
-- Legacy Inventory stabilization
-- Hash Queue Preview
-- Queue validation
-- SHA256 Dry Run
-- DB Apply Preview
-- Transaction safety gate
-- Rollback test
-- SQLite backup and restore test
-- Limited Batch Dry Run
+- Schema v3 적용
+- Runtime 명령 49개 자동 탐색 정상
+- 기존 SHA256 보존
+- Incremental Duplicate Backfill 비활성화
+- 자동 삭제 비활성화
+- exHDD1 삭제 상태 Inventory 반영 필요 또는 진행 중
+- exHDD2 Reconcile 검증 진행 중
+- Archive Immich / Nextcloud 후순위
 
-## Current Inventory
+## Current Safety Policy
 
-- Total records: approximately 1.53 million
-- Existing SHA256 results are preserved
-- Archive is the Master Repository
-- Immich and Nextcloud are deferred
-- Automatic deletion is prohibited
-
-## Next Architecture Decision
-
-Duplicate processing uses an Incremental Engine.
-
-Full Inventory duplicate rebuild is not the normal operating model.
+- No automatic deletion
+- Archive remains the master repository
+- Existing SHA256 values are preserved
+- Database backup is required before write operations
+- Runtime databases and generated reports are excluded from Git
