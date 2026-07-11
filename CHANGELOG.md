@@ -153,3 +153,22 @@ Nextcloud data path migrated to:
 
 - Automatic deletion remains disabled.
 - Experimental commands are not automatically discovered by runtime.sh.
+
+## 2026-07 — Incremental Duplicate automated tests
+
+### Added
+
+- Incremental processing state test
+- Hash Batch lifecycle test
+- Duplicate Group relationship test
+- Retry and Resume test
+- Maximum Retry Count test
+- Integrated Incremental Duplicate test suite
+
+### Policy
+
+- Maximum automatic retry count is 3.
+- Retry-limit failures require manual review.
+- Tests operate on copied databases.
+- The operating database remains unchanged.
+- Automatic file deletion remains disabled.

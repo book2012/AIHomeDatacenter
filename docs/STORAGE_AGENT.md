@@ -67,3 +67,25 @@ Archive 일반 영역은 별도 Freshness 검증 후 Scan 여부를 결정한다
 - 마운트 검증 없이 Missing 일괄 갱신 금지
 - 대량 삭제 후 Freshness Audit 및 Reconcile 필수
 - Immich와 Nextcloud는 현재 Hash 및 Duplicate 처리에서 제외
+
+## Incremental Duplicate Test Suite
+
+Incremental Duplicate 기능은 운영 DB 복사본에서 검증한다.
+
+검증 항목:
+
+- Processing 상태 전이
+- Hash Batch 연결
+- Duplicate Group 생성 및 재사용
+- Retry 및 Resume
+- 최대 재시도 한도
+- Foreign Key 검사
+- SQLite 무결성 검사
+- 운영 DB 비변경
+
+Retry 정책:
+
+- 최대 자동 재시도 횟수는 3회이다.
+- 한도에 도달하면 `failed` 상태를 유지한다.
+- 이후 처리는 사용자 또는 Mac mini Brain의 승인이 필요하다.
+- 자동 파일 삭제는 허용하지 않는다.

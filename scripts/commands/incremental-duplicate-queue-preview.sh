@@ -106,6 +106,7 @@ AND files.sha256 NOT GLOB '*[^0-9a-fA-F]*'
 AND files.is_missing = 0
 AND files.path NOT LIKE '/mnt/storage/Archive/Immich/%'
 AND files.path NOT LIKE '/mnt/storage/Archive/Nextcloud/%'
+AND files.path NOT LIKE '/opt/aihomedatacenter/tests/%'
 """
 
 eligible_files = connection.execute(
