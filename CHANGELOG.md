@@ -139,3 +139,17 @@ Nextcloud data path migrated to:
 - Automatic deletion remains disabled
 - Immich and Nextcloud remain deferred
 - Storage freshness must be verified before Hash or Duplicate processing
+
+## 2026-07 — Experimental Duplicate Commands
+
+### Changed
+
+- Moved full Duplicate table preview out of the operational Runtime.
+- Moved full Duplicate rebuild test out of the operational Runtime.
+- Operational Duplicate processing remains Incremental.
+- Long-running full rebuild commands require explicit manual execution.
+
+### Safety
+
+- Automatic deletion remains disabled.
+- Experimental commands are not automatically discovered by runtime.sh.
