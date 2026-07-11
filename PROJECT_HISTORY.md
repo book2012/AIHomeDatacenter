@@ -31,3 +31,16 @@ The project audit confirmed that Ubuntu Runtime automatically discovers command 
 Storage freshness checks identified stale Inventory state after user-managed deletions on exHDD1 and exHDD2. Reconcile workflows preserve Inventory records and SHA256 values while updating only `is_missing`.
 
 Archive is located under the `/mnt/storage` filesystem. Immich and Nextcloud remain excluded from the current Hash and Duplicate scope.
+
+## 2026-07 — Storage Agent v1.0.0 RC1 validated
+
+The Storage Agent Release Candidate Audit passed.
+
+Validation results:
+
+- Runtime discovery matched all command files.
+- Schema version 3 was confirmed.
+- Database integrity and foreign key checks passed.
+- Incremental Duplicate processing, Retry, Resume and Retry Limit tests passed.
+- Tests used copied databases and did not modify the operating database.
+- Automatic deletion and initial backfill remained disabled.

@@ -89,3 +89,20 @@ Retry 정책:
 - 한도에 도달하면 `failed` 상태를 유지한다.
 - 이후 처리는 사용자 또는 Mac mini Brain의 승인이 필요하다.
 - 자동 파일 삭제는 허용하지 않는다.
+
+## Release Candidate Status
+
+Storage Agent v1.0.0 RC1 passed the Release Candidate Audit.
+
+Validated:
+
+- Runtime command discovery
+- Schema v3
+- Database integrity
+- Foreign key relationships
+- Incremental Duplicate processing
+- Retry and Resume
+- Maximum Retry Count
+- Operating database protection
+
+Production Incremental Duplicate processing remains disabled until a real approved data queue exists.

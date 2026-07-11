@@ -172,3 +172,24 @@ Nextcloud data path migrated to:
 - Tests operate on copied databases.
 - The operating database remains unchanged.
 - Automatic file deletion remains disabled.
+
+## 2026-07 — Storage Agent v1.0.0 RC1
+
+### Release Candidate Validation
+
+- Runtime commands and command files are synchronized.
+- Schema v3 metadata and database objects are consistent.
+- SQLite integrity check passed.
+- Foreign key validation passed.
+- Incremental Duplicate processing tests passed.
+- Retry and Resume tests passed.
+- Maximum Retry Count validation passed.
+- Operating database remained unchanged during tests.
+- Runtime database files and generated reports are excluded from Git.
+
+### Safety
+
+- Incremental Duplicate production processing remains disabled.
+- Initial Backfill remains disabled.
+- Automatic deletion remains disabled.
+- Retry limit failures require manual approval.
