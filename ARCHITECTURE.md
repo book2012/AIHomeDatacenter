@@ -1,29 +1,48 @@
-# Architecture
+# AI Home Datacenter Architecture
 
-## Mac mini M4 — Brain
+## Control Plane
 
-AI 판단, Dashboard, n8n, OpenAI, Claude, Ollama, Notion 및 알림을 담당한다.
+Mac mini M4 is the Brain.
 
-## Ubuntu Server — Worker
+It controls the Ubuntu Worker through approved SSH or API commands and consumes JSON reports.
 
-Docker, Storage, Backup, Inventory, Immich, Nextcloud 및 Plex 운영 작업을 담당한다.
+## Worker Plane
 
-Ubuntu에서는 AI 추론을 실행하지 않는다.
+Ubuntu Server runs operational workloads only.
+
+- Docker
+- Storage
+- Backup
+- Inventory
+- Hash processing
+- Immich
+- Nextcloud
+- Plex
 
 ## Runtime Flow
 
 Mac mini
-→ SSH/API
 → Ubuntu Runtime
-→ Approved Commands
-→ Reports
+→ Approved Command
+→ JSON or Text Report
 → AI Analysis
+→ User Approval
 
 ## Storage Flow
 
 Archive
 → Inventory
+→ Pending Hash Queue
+→ Validation
 → SHA256
-→ Duplicate Preview
+→ Incremental Duplicate Index
+→ AI Recommendation
 → User Approval
-→ Cleanup or Migration
+
+## Safety
+
+- No automatic deletion
+- Existing SHA256 values are preserved
+- Database changes use transactions
+- Database backup is required before write operations
+- Immich and Nextcloud remain excluded from current Hash and Duplicate work

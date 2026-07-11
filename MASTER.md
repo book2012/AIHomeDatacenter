@@ -2,28 +2,69 @@
 
 ## Current Phase
 
-Sprint 4 — Inventory Stabilization
+Sprint 5 completed.
+Sprint 5.5 Incremental Duplicate Engine is next.
 
-## Ubuntu Worker
+## Platform Roles
 
-- Ubuntu Runtime
+### Mac mini M4 — Brain
+
+- AI Agent
+- OpenAI
+- Claude
+- Ollama
+- Homepage
+- WordPress
+- n8n
+- Notion
+- GitHub
+- Ubuntu Worker control
+- Dashboard and notifications
+
+Mac mini performs decisions and orchestration only.
+
+### Ubuntu Server — Worker
+
 - Docker
 - Storage
 - Backup
-- Inventory
+- Immich
+- Nextcloud
+- Plex
+- Runtime Commands
 - Storage Agent
+- Inventory
+- SHA256 processing
+- SMART and backup verification
 
-## Mac mini
+Ubuntu does not perform AI reasoning.
 
-- AI Brain
-- Control Center
-- AI Analysis
-- Notifications
-- Ubuntu Worker Control
+## Completed Foundations
 
-## Current Safety Policy
+- Ubuntu Runtime
+- Runtime health reporting
+- Storage Agent
+- SQLite Inventory
+- Legacy Inventory stabilization
+- Hash Queue Preview
+- Queue validation
+- SHA256 Dry Run
+- DB Apply Preview
+- Transaction safety gate
+- Rollback test
+- SQLite backup and restore test
+- Limited Batch Dry Run
 
-- No automatic deletion
+## Current Inventory
+
+- Total records: approximately 1.53 million
+- Existing SHA256 results are preserved
 - Archive is the Master Repository
 - Immich and Nextcloud are deferred
-- Existing SHA256 results must be preserved
+- Automatic deletion is prohibited
+
+## Next Architecture Decision
+
+Duplicate processing uses an Incremental Engine.
+
+Full Inventory duplicate rebuild is not the normal operating model.

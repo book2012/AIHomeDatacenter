@@ -87,3 +87,26 @@ Nextcloud data path migrated to:
 - Database writes use transactions
 - Failures require rollback
 - Automatic file deletion remains disabled
+
+## 2026-07 — Sprint 5 — Hash Safety Foundation
+
+### Added
+
+- Existing SHA256 audit
+- Pending Hash Queue Preview
+- Queue path and size validation
+- Limited SHA256 Dry Run
+- Database Apply Preview
+- Transaction safety gate
+- Rollback verification using copied database
+- SQLite backup and restore verification
+- Limited Batch Dry Run
+- Batch Apply Preview
+
+### Architecture Decision
+
+- Full Duplicate rebuild is not used as the normal operating model.
+- Duplicate processing will be redesigned as an Incremental Engine.
+- Existing SHA256 results are preserved.
+- Immich and Nextcloud remain deferred.
+- Automatic deletion remains prohibited.

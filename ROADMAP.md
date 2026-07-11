@@ -1,40 +1,70 @@
-# Roadmap
+# AI Home Datacenter Roadmap
 
-## Sprint 1
+## Sprint 1 — Infrastructure
 
-Infrastructure foundation — Completed
+Completed.
 
-## Sprint 2
+## Sprint 2 — Ubuntu Runtime
 
-Ubuntu Runtime — Completed
+Completed.
 
-## Sprint 3
+## Sprint 3 — Storage Agent Core
 
-Storage Agent Core — Completed
+Completed.
 
-## Sprint 4
+## Sprint 4 — Inventory Stabilization
 
-Inventory Stabilization — In Progress
+Completed.
 
 - Legacy Inventory protection
 - Migration Preview
 - Duplicate Preview
-- Root comparison
-- Duplicate validation
+- Root analysis
+- Reliability validation
 - Project Audit
 
-## Sprint 5
+## Sprint 5 — Hash Safety Foundation
 
-SHA256 and Duplicate Engine
+Completed.
 
-## Sprint 6
+- Hash Audit
+- Pending Queue Preview
+- Queue Validation
+- SHA256 Dry Run
+- DB Apply Preview
+- Transaction safety
+- Rollback Test
+- Backup and Restore Test
+- Limited Batch Dry Run
 
-Data Migration
+## Sprint 5.5 — Incremental Duplicate Engine
 
-## Sprint 7
+Next.
 
-Mac mini Brain Integration
+- Schema migration
+- Duplicate processing state
+- Newly completed Hash selection
+- Incremental group update
+- Retry and resume
+- Automated tests
 
-## Sprint 8
+## Sprint 6 — Data Migration
 
-Dashboard and Notifications
+- exHDD to Archive
+- ownCloud to Archive
+- Verification and rollback
+- Immich and Nextcloud migration later
+
+## Sprint 7 — Mac mini Brain Integration
+
+- SSH/API control
+- JSON report collection
+- AI analysis
+- User approval workflow
+
+## Sprint 8 — Dashboard and Notifications
+
+- Homepage
+- Telegram
+- Discord
+- Notion
